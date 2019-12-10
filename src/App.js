@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 
 import Grid from '@material-ui/core/Toolbar';
 import SimpleMenu from './component/SimpleMenu';
-import ButtonAppBar from './component/ButtonAppBar';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,20 +31,19 @@ export default function App() {
 
   return (
     <div className={classes.root}>
-      <ButtonAppBar />
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Karyon React
           </Typography>
           <Grid >
-            <Link to="/replica" className={classes.linkMenu}><SimpleMenu name="Painel de Réplica"></SimpleMenu></Link>
+            <Link to="/replica" className={classes.linkMenu}><SimpleMenu name="Bioslab" name2="Painél de Réplica"></SimpleMenu></Link>
           </Grid>
           <Grid >
-            <Link to="/estatistica" >Estatística</Link>
+            <Link to="/estatistica" className={classes.linkMenu}><SimpleMenu name="Facelab" name2="Estatística"></SimpleMenu></Link>
           </Grid>
           <Grid >
-            <Link to="/usuarios" >Usuários</Link>
+            <Link to="/usuarios" className={classes.linkMenu}><SimpleMenu name="Cadastro" name2="Usuários"></SimpleMenu></Link>
           </Grid>
         </Toolbar>
       </AppBar>

@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Login from './component/Login';
 
 function verificaAutenticacao() {
-    return localStorage.getItem('token') === null
+    return false
+    // return localStorage.getItem('token') === null
 }
 
 ReactDOM.render(
@@ -14,9 +15,7 @@ ReactDOM.render(
             <Switch>
                 <Route path="/login" exact component={Login} />
                 <Route path="/" render={() => (
-                    verificaAutenticacao() ? (
-                        <Redirect to="/login" />
-                    ) : <App />
+                    verificaAutenticacao() ? <Redirect to="/login" /> : <App />
                 )} />
             </Switch>
         </Router>

@@ -16,7 +16,7 @@ export default function SimpleMenu(props) {
 
   return (
     <div>
-      <Button color="inherit" variant="outlined" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} >
+      <Button variant="contained" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} >
         {props.name}
       </Button>
       <Menu
@@ -26,9 +26,7 @@ export default function SimpleMenu(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>{props.name2}</MenuItem>
       </Menu>
     </div>
   );
